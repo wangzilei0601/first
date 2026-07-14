@@ -1,0 +1,5 @@
+D:/school/freshman3/cpp_practice/1-setup-env/samples/homework/tic-tac-toe/build/Debug/CMakeFiles/Calculator.dir
+D:/school/freshman3/cpp_practice/1-setup-env/samples/homework/tic-tac-toe/build/Debug/CMakeFiles/edit_cache.dir
+D:/school/freshman3/cpp_practice/1-setup-env/samples/homework/tic-tac-toe/build/Debug/CMakeFiles/rebuild_cache.dir
+D:/school/freshman3/cpp_practice/1-setup-env/samples/homework/tic-tac-toe/build/Debug/CMakeFiles/Calculator_autogen_timestamp_deps.dir
+D:/school/freshman3/cpp_practice/1-setup-env/samples/homework/tic-tac-toe/build/Debug/CMakeFiles/Calculator_autogen.dir
