@@ -1,0 +1,22 @@
+# 构建目录（CMake / Qt 生成的一律不提交）
+build/
+build-*/
+out/
+cmake-build-*/
+# CMake 缓存与中间产物
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+# 编译产物
+*.o
+*.obj
+*.exe
+*.dll
+*.a
+*.lib
+# 个人编辑器 / 系统文件（按需保留）
+.idea/
+*.user
+Thumbs.db
+.DS_Store
