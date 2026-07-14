@@ -1,9 +1,0 @@
-# ninja log v6
-3	3306	8057304388071613	Calculator_autogen/timestamp	dd484c4a72d198eb
-3	3306	8057304388071613	Calculator_autogen/mocs_compilation.cpp	dd484c4a72d198eb
-3	3306	8057304388071613	D:/school/freshman3/cpp_practice/first/build/Debug/Calculator_autogen/timestamp	dd484c4a72d198eb
-3	3306	8057304388071613	D:/school/freshman3/cpp_practice/first/build/Debug/Calculator_autogen/mocs_compilation.cpp	dd484c4a72d198eb
-3317	5053	8057304389028025	CMakeFiles/Calculator.dir/src/main.cpp.obj	652cb48503d88f03
-3312	5061	8057304389008034	CMakeFiles/Calculator.dir/Calculator_autogen/mocs_compilation.cpp.obj	7fe06eb5c8b4ade7
-3321	5703	8057304389091284	CMakeFiles/Calculator.dir/src/mainwindow.cpp.obj	301f6dca264df4cd
-5704	5947	8057304412922770	Calculator.exe	fe19b4d2c170bdc5
