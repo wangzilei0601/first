@@ -127,8 +127,9 @@ MainWindow::MainWindow(QWidget *parent): QWidget(parent)
 }
 
 
-bool MainWindow::check_win(Player p, int index, int winsquares[]) 
+bool MainWindow::check_win(Player p, int index, int winsquares[], int& count) 
 {
+    if (board[index] != p) return false;
     int row = index / LENGTH;
     int col = index % LENGTH;
     int dirs[4][2] = {
@@ -139,7 +140,7 @@ bool MainWindow::check_win(Player p, int index, int winsquares[])
     };
 
     for (int d = 0; d < 4; ++d) {
-        int count = 1;          // 当前这颗棋子
+        count = 1;          // 当前这颗棋子
         int pos = 0;            // 用来记录胜利格子的索引
         winsquares[pos++] = index; // 把当前棋子存进胜利列表
 
@@ -166,7 +167,7 @@ bool MainWindow::check_win(Player p, int index, int winsquares[])
         }
 
         // 如果这条线上连续的棋子数量 >= 棋盘胜利长度，就赢了！
-        if (count >= LENGTH) {
+        if (count >= 5) {
             return true;
         }
     }
@@ -210,20 +211,21 @@ void MainWindow::computerplay()
         is_Xturn = true;
     }
     int winsquares[LENGTH];
-    if (check_win(Player::X, index, winsquares))
+    int count = 0;
+    if (check_win(Player::X, index, winsquares, count))
     {
         finished = true;
         label -> setText("Computer wins!");
-        for (int i = 0; i < LENGTH; i++) 
+        for (int i = 0; i < count; i++) 
         {
             buttonboard[winsquares[i]]->setStyleSheet("background-color: #90EE90;"); // 淡绿色
         }
     }
-    else if (check_win(Player::O, index, winsquares))
+    else if (check_win(Player::O, index, winsquares, count))
     {
         finished = true;
         label -> setText("Computer wins!");
-        for (int i = 0; i < LENGTH; i++) 
+        for (int i = 0; i < count; i++) 
         {
             buttonboard[winsquares[i]]->setStyleSheet("background-color: #90EE90;"); // 淡绿色
         }
@@ -257,24 +259,25 @@ void MainWindow::onSquare(int index)
         is_Xturn = true;
     }
     int winsquares[LENGTH];
-    if (check_win(Player::X, index, winsquares))
+    int count = 0;
+    if (check_win(Player::X, index, winsquares, count))
     {
         finished = true;
         label -> setText("X wins!");
         X_win_times++;
         Xwins->setText("X win times: " + QString::number(X_win_times));
-        for (int i = 0; i < LENGTH; i++) 
+        for (int i = 0; i < count; i++) 
         {
             buttonboard[winsquares[i]]->setStyleSheet("background-color: #90EE90;"); // 淡绿色
         }
     }
-    else if (check_win(Player::O, index, winsquares))
+    else if (check_win(Player::O, index, winsquares, count))
     {
         finished = true;
         label -> setText("O wins!");
         O_win_times++;
         Owins->setText("O win times: " + QString::number(O_win_times));
-        for (int i = 0; i < LENGTH; i++) 
+        for (int i = 0; i < count; i++) 
         {
             buttonboard[winsquares[i]]->setStyleSheet("background-color: #90EE90;"); // 淡绿色
         }
